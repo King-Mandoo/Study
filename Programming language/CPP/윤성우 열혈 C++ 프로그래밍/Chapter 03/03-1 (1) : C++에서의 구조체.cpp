@@ -126,7 +126,7 @@ struct Car
 
 		if (carSpeed + ACC_STEP >= MAX_SPD)
 		{
-			carSpeed = MAX_SPD;
+			carSpeed = MAX_SPD; 
 			return;
 		}
 
