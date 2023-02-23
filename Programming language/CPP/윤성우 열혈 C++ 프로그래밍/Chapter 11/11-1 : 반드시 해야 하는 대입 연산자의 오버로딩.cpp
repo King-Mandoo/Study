@@ -87,7 +87,7 @@ public:
 		strcpy(name, myname);
 		age = myage;
 	}
-	void ShowPersonInfo() const
+	void ShowPersonInfo() const 
 	{
 		cout << "이름: " << name << endl;
 		cout << "나이: " << age <<  endl;
