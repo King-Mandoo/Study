@@ -30,7 +30,7 @@
         
         // Encapsulation : 캡슐화    (캡슐화는 은닉성을 포함하고 있음)
         
-     2. The second reason for declaring a field as private is that we do not want
+     2. The second reason for declaring a field as private is that we do not want 
         other classes to freely modify them. 
         This helps to prevent the fields from being corrupted.
         // private로 선언한 두 번째 이유는, 다른 클래스에서 이것들을 자유롭게 수정하는 것을 원치 않기 때문이다.
