@@ -1,0 +1,380 @@
+2022. 03. 29.
+
+🟡 HTML5의 문서 구조화
+
+🟢 문서의 구조
+
+🟢 기존 HTML의 한계
+
+   --> 웹 페이지 역시 문서이므로 잘 구조화 되어야 한다. HTML5 이전까지는 웹페이지의 구조를 표현하는 태그가 없었다.
+
+🟢 검색 엔진이 좋아하는 웹 페이지, 시멘틱 웹
+
+   --> 웹 페이지의 구조화가 중요한 이유는, 브라우저를 통해 보는 것 이상으로 웹 문서에 들어 있는 정보 탐색이 중요한 시대가 왔기 때문이다.
+       탐색이 쉽게 검색 엔진이 좋아하는 웹 사이트를 만들어야 웹 사이트의 가치가 올라간다.
+       
+       검색 엔진은 웹 페이지가 어떤 주제를 가지고 있는지, 목차는 어디에 잇는지, 기삿거리는 어디에 있는지, 저작권 정보는 어디에 있는지 찾고자 한다.
+       하지만 기존 HTML  태그 셋으로는 검색 엔진에 이러한 정보를 알릴 수 없었다. 이런 정보들은 문서의 구조와 관계되어 있다.
+       즉 기존에 사용하던 <p>, <div>, <h1>, <h2> 등의 태그로는 문서의 구조나 콘텐츠의 의미 전달이 어렵다.
+       이들은 콘텐츠의 의미를 표현하는 태그가 아니기 때문이다. <p> 태그는 '문단이 있어요', <div>는 '블록이에요', <h1>은 '제일 큰 제목입니다' 정도의 정보밖에 주지 못한다.
+       
+       HTML5는 이런 문제를 극복하기 위해, <header>, <section>, <article> 등 문서의 구조와 의미를 표현하는 여러 태그를 추가하였다.
+       구글 검색 엔진의 경우 웹 페이지에서 <header>, <section>, <main>, <summary>, <mark>, <time> 등 문서의 구조와 의미를 표현하는 HTML 태그를 찾고, 이를 기반으로
+       리뷰, 사람, 제품, 업체, 이벤트, 음악 등 다양한 검색 결과를 제공하고 있다.
+       
+       🎈🎈 웹 문서를 구조화하여 의미 있는 내용 탐색이 용이한 웹을 시맨틱 웹(semantic web)이라고 하며 
+            <header>, <section>, <article>, <main>, <summary>, <mark>, <time> 등의 태그를 시맨틱 태그라고 한다.
+            
+            시맨틱 태그는 사용자가 아니라 브라우저와 개발자에게 그 태그의 의미를 전달해준다....!!!!!!!!!!!
+   
+🟢 HTML5 문서의 구조와 시맨틱 태그              
+   
+   🔶 <header>                                                                                                  *simantic 뜻: 의미론적인
+   --> 페이지나 섹션의 머리말을 표현하는 태그이다.
+       보통 머리말에는 페이지 제목, 페이지를 소개하는 간단한 설명이 들어간다.
+       
+   🔶 <nav>
+   --> navigation의 줄임말로 하이퍼링크들을 모아 놓는 특별한 섹션이다.
+       페이지의 모든 하이퍼링크가 이곳에 있을 필요는 없다. 페이지 내 목차를 만들기 위해 주로 사용된다.
+       
+   🔶 <section>
+   --> 문서의 장 혹은 절을 구성하는 역할을 한다.
+       책의나 보고서에 여러 장이 있는 것 처럼, 웹 페이지에도 여러 <section>을 둘 수 있다.
+       헤딩 태그로 섹션의 주제를 기재하는 것이 바람직하다.
+       
+   🔶 <article>
+   --> 본문과 연관되어 있지만, 독립적인 콘텐츠를 담는 영역이다.
+       보조적인 기사, 블로그 포스트 등 웹페이지의 본질을 훼손하지 않으면서 독립적인 내용을 담는 영역이다.
+   
+   🔶 <aside>
+   --> 웹 페이지 본문 흐름에서 약간 벗어난 노트나 팁, 신문, 잡지에서 주요 기사 옆에 짤막하게 곁들이는 관련 기사 등을 담는 태그이다.
+       주로 페이지의 오른쪽이나 윈쪽에 주로 배치된다.
+       
+   🔶 <footer> 
+   --> 페이지나 <section> 내에 꼬리말을 담는다. 이곳에는 저자나 저작권 정보 등을 주로 표시한다. 
+       <header>와 <footer>가 꼭 웹 페이지의 서두와 말미에 배치될 필요는 없다.
+   
+ 🟢 문서의 모양은 구조와 별개
+ 
+  --> 이들은 문서의 구조만을 표현하며 위치와 색상 등 모양은 개발자가 CSS3를 이용하여 직접 만들어야 한다.
+  
+ 🟢 HTML5 문서 구조화 사례
+ 
+ --> 책 p.116
+ 
+ 🟢 기존 HTML 문서와 HTML5 문서 비교
+ 
+ --> 책 p.117
+ 
+ 🟢 HTML5 문서 구조화 연습
+ 
+ * 웹 페이지 전체를 시맨틱 태그들로 분활한다.
+ * 웹 페이지 전체 제목과 소개는 <header>로 작성한다.
+ * 본문은 <section>으로 묶고, 본문 내에 각 절이나 영역은 <article>로 작성한다.
+ * 링크나 메뉴들은 <nav> 태그로 작성한다.
+ * <header>, <section>, <article>, <aside> 등에는 헤딩 태그를 이용하여 제목을 붙인다.
+ * 배경음악을 연주하는 <audio> 태그는 <header> 영역에 둔다.
+ * 문서의 모양 ( <header>, <section>, <article>, <aside>의 배치) 은 CSS3 스타일 시트를 이용한다.
+ 
+ 
+ 🟢 시맨틱 블록 태그
+ 
+   🔶 <figure>                     
+   --> 본문에 삽입된 그림을 블록화하는 시맨틱 태그이다.
+       
+       <figure> <\figure> 태그 안에 있는 건 그림화가 되는 것 같다.          
+       이 태그 내에 그림 제목은 <figcaption> 태그로 작성하면 된다.              
+         
+  <figure>
+    <figcaption>그냥 사진</figcaption>
+    
+    <pre>
+        하                 이건 그냥 블록사진
+        하
+        하  하 하
+
+        <img src="자료/미국.jpg" width="500">
+    </pre>
+  </figure>
+  
+  ❗❗✅ figure 시맨틱 태그는 img 태그와 그 이미지를 설명하는 figcaption 태그를 묶어 놓은 태그이다.
+      figcaption 태그의 이미지에 시각적인 설명을 추가하는 것이다.
+  
+  기사를 보면 사진 아래에 짤막한 설명이 들어있는 경우가 있다. 그럴 경우 이 태그를 사용한다.
+  결국 설명이 필요한 사진이 있을 경우 이 태그를 쓰면 되는 듯하다.
+  
+  
+    
+   🔶 <details>와 <summary>
+   --> <details>는 상세 정보를 담는 시멘트 블록 태그이다.
+       핸들(▶)이 나타나고, 사용자가 핸들을 클릭하여 상세 정보를 감추거나 보이게 할 수 있다.
+       
+       <summary> 태그는 <details>로 구성되는 블록의 제목을 표현한다.
+       
+<details>
+    <summary> 미국사진</summary>            <--- <summary> <\summary> 태그 안에 제목을 넣어준다.
+        <figure>
+            <figcaption>그냥 사진</figcaption>
+            <pre>
+                하                 이건 그냥 블록사진
+                하
+                하  하 하
+                <img src="자료/미국.jpg" width="500">
+            </pre>
+        </figure>
+</details>
+
+❗❗❗❗❗❗ <details> 태그 하나 당 <summary> 태그도 하나만 들어간다. (내가 해본 결과...)
+       
+       <details>태그 안에 하나의 <summary>태그와 그 뒤에 추가적인 태그로 구성된다. (출처:https://abcdqbbq.tistory.com/96)
+       
+       
+    <details>
+        <summary> 우리집 강아지 이름</summary> 
+        <p>마루</p>                                   <--- 이렇게 하면 내가 원하는 결과가 나오지 않음.
+        <summary> 내  이름</summary> 
+        <p>선태욱</p>         
+    </details>
+
+--------------------------------------------
+
+   <details>
+        <summary> 우리집 강아지 이름</summary> 
+        <p>마루</p>         
+    </details>
+ 
+    <details>
+        <summary> 내  이름</summary>                               <---- 이렇게 나눠야지 내가 원하는 대로 나옴.
+        <p>선태욱</p>         
+    </details>
+
+  
+   🟢 시맨틱 인라인 태그
+   
+   * <mark>  -  중요한 텍스트임을 표시
+   * <time>  -  시간 정보임을 표시
+   
+          ✅ Q. 굳이 <time> 태그를 쓰지 않아도, 텍스트로 날짜와 시간 정보를 적으면 되는데, 왜 <time> 태그를 쓸까?
+          
+          --> <time> 태그는 일반 텍스트로 보이는 날짜와 시간 정보를 진짜 날짜, 시간 정보임을 HTML에게 알려주기 위해 사용한다.
+              따라서 HTML5를 지원하는 모든 브라우저는 <time> 태그를 통해 아 얘가 진짜 날짜, 시간 정보네? 라고 파악한다.
+              
+              출처: https://miaow-miaow.tistory.com/51   <-- 더 자세히 나와있음 / 구글 검색엔진과 관련돼서 설명해줌.
+    
+    * <meter>  -  주어진 범위나 % 의 데이터 양 표시    /    수치
+    * <progress>  -  작업의 진행 정도 표시            /     진행도
+ 
+ 
+<marK>게임 난이도</marK> <br>
+시간: <time>17:17</time><br>
+ 다크 소올3<meter value="9.5" max="10.0">8.5</meter> <br>          <--  <meter>와 <progress>에  value와 max 속성이 
+ 앵그리버드<meter value="5" max="10.0">8.5</meter> <br>
+ 과제 진행도 <progress value="10" max="100"></progress>
+ 
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+  🟡 웹 폼
+ 
+   🟢 웹 폼과 폼 요소
+    
+    --> 웹 페이지를 통해 사용자가 입력을 받는 폼을 웹 폼(Webform) 혹은 폼(form)이라고 한다.
+        이러한 다양한 태그들을 폼 요소(form element)라고 부른다.    
+        폼은 로그인, 등록, 검색, 예약, 쇼핑 등의 다양한 웹 서비스에서 사용자의 입력을 받기 위해 사용된다.
+        
+        🎈🎈사용자에게 입력을 받는 태그를 폼요소//
+        
+        
+   🟢 간단한 로그인 폼 만들기
+   
+   🟢 폼 태그, <form>
+   
+   🟢 네이버 검색 사례를 통한 폼 전송 과정의 이해
+   
+    --> 책 p.125 ~ 128 읽기..
+    
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------   
+ 
+   🟡 폼 만들기   책 p.129 보기
+   
+    --> 폼요소의 종류가 나열 되어있다.
+   
+   🟢 텍스트 입력, <input type="text|password">, <textarea>
+   
+   --> <input type="text|password"
+              name="요소 이름"
+              max length="문자 개수"            -->   입력할 수 있는 문자의 최대 개수
+              size="문자 개수"                  -->   입력 창의 크기. 단위는 문자 개수
+              value="초기 텍스트">
+ 
+      
+       <textarea cols="열 개수"
+                 rows="행 개수"
+                 name="요소 이름"
+                 wrap="OFF|HARD|SOFT">
+                 초기 출력될 텍스트
+       <\textarea>
+ 
+ 
+ 
+    🟢 데이터 목록을 가진 텍스트 입력 창, <datalist>
+     
+     --> 추천 검색어 목록이 펼쳐지고 항목을 선택하게 해주는 태그
+     
+     
+     <input type="text" value="" maxlength="" size="" list="foods"> 
+        <datalist id="foods">
+            <option value="떡볶이"></option>
+            <option value="치킨"></option>
+            <option value="감자그라탕"></option>
+        </datalist>                                                   -->  🎈<input> 태그의 list 속성 값과 <datalist> 태그의 id 속성 값을 동일하게 하여 연결해야 한다.
+ 
+  
+   
+     🟢 텍스트/이미지 버튼 만들기
+   
+     <input type="button|reset|submit|image"
+            name="버튼 이름"
+            value="문자열"            <-- 버튼에 출력되는 문자열
+            src="이미지 URL">         <-- type="image"인 경우에 필요한 것으로 이미지의 URL
+            
+            
+     <button type="button|reset|submit"
+             name="버튼 이름"
+             value="문자열">
+       버튼 문자열이나 이미지
+     <\button>
+   
+     🔷 단순 버튼 (type="button")
+     <input type="button" value="버튼">              
+     <button type="button">버튼</button>
+     
+     
+     🔷 submit 버튼 (type="submit")
+     <input type="submit" value="전송">              
+     <button type="submit">전송</button>
+     
+     
+     🔷 reset 버튼 (type="reset")
+     <input type="reset" value="리셋">              
+     <button type="reset">리셋</button>
+     
+     
+     🔷 이미지 버튼 (type="image")  
+     <input type="img" src=" value="버튼">              
+     <button type="button">버튼</button>
+   
+  
+     <input type="image" src="병아리/사지인.jpg" alt="이미지 버튼">                           <-- 두 버튼 스타일이 다름
+     <button type="button"><img src="병아리/사지인.jpg" alt="이미지 버튼"></button>
+
+      
+           🎈 여기에 대한 정확한 설명은 책 p.133 확인
+
+
+
+     🟢 선택형 입력
+     
+     <input type="checkbox|radio
+            name="요소 이름"
+            value="요소 값"       <-- 폼 요소가 선택된 상태일 때, 웹 서버에 전송되는 값
+            checked>              <-- 이 속성이 있으면, 초기에 선택 상태로 출력
+  
+  
+     🔷 체크박스 만들기, <input type="checkbox">
+  
+        만두<input type="checkbox" value="1">              
+        어묵<input type="checkbox" value="2">             🎈 만두, 어묵, 순대 같은 것들을 '캡션' 이라고 한다.
+        순대<input type="checkbox" value="3">
+
+    
+     🔷 라디오버튼 만들기, <input type="radio">
+     
+        --> name 속성 값이 같은 라디오버튼들이 하나의 그룹을 형성하고, 그 중 하나만 선택되는 폼 요소이다.
+
+
+        <input type="radio" name="china" value="1"> 짜장면 
+        <input type="radio" name="china" value="2"> 짬뽕
+        <input type="radio" name="china" value="3"> 탕수육           <-- china라는 하나의 그룹에서 하나만 선택 가능.
+
+
+
+     🔷 콤보박스 만들기, <select>
+     
+      --> <select> 태그는 콤보박스 전체를 표현하고 <option> 태그는 항목 하나를 표현한다.
+          <option> 태그에 selected 속성이 있으면 그 항목은 처음부터 선택 상태로 출력된다.
+          
+          
+          <select name="요소 이름"
+                  size="개수"              <-- 콤보 박스 창 크기(보일 수 있는 최대 항목 개수). 디폴트는 1   // 말 그대로 보이는 창 크기 (고를 수 있는 선택지를 한정시킨다는 뜻 x)
+                  multiple>                <-- 이 속성이 있으면 다수 항목 선택 가능
+           여러 개의 <option> ... <\option> 태그로 선택 항목 만들기
+          <\select>
+          
+          
+          <option value="옵션 값"     <-- 이 항목이 선택되었을 때 웹 서버에 전송되는 값
+                  selected>           <-- 이 속성이 있으면 초기에 선택 상태로 출력
+           항목 문자열
+          <\option>
+
+  
+  
+       <select name="한식" size="2" multiple>
+                <option value="1">김치찌개</option>
+                <option value="2">된장찌개</option>
+                <option value="3">삼계탕</option>
+                <option value="4">비빔밥</option>
+        </select>
+
+       
+      🟢 <label>로 폼 요소의 캡션 만들기
+      
+       --> 사용자 ID : <input type="text">  에서 '사용자 ID : '를 캡션이라고 한다.  <input type="text"> 은 폼 요소라고 한다.
+       
+           <label> 태그를 이용하면 캡션과 폼 요소를 한 단위로 묶을 수 있다.
+           
+       
+      🔷 <label>로 폼 요소 둘러싸기
+      
+         <label>
+            사용자 ID : <input type="text">
+         <\label>
+         
+         
+      🔷 <label>로 캡션을 지정하고, for 속성으로 캡션과 폼 요소 연결
+      
+       --> '<label> 캡션 </label>' 로 캡션 문자열을 만들고, for 속성을 이용하여 다음과 같이 캡션을 연결한다.
+       
+         <label for="loginID">
+           사용자 ID : 
+         <\label>
+         <input type="text" id="loginID">
+
+
+     🔷 선택형 요소의 캡션을 <label>로 감싸기
+
+        <label>
+            <input type="radio" name="dog" value="1"> 귀엽다 <img src="files/귀여운.jpg" width="50">
+        </label>
+
+        <label>
+            <input type="radio" name="dog" value="1"> 이쁘다 <img src="files/이쁜.png" width="50">
+        </label>
+
+        <label>
+            <input type="radio" name="dog" value="1"> 사랑스럽다 <img src="files/사랑스러운.jpg" width="50">
+        </label>
+
+       <label>
+            <input type="radio" name="dog" value="1"> 멋지다 <img src="files/멋진.jpg" width="50">
+        </label> 
+
+
+
+
+
+하 머리 아파
+
+
+
+
+
