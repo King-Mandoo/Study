@@ -1,0 +1,355 @@
+💙 CSS3 고급 활용
+  
+  --> HTML 태그가 출력되는 모양은 항상 박스(box model)라는 점을 기억해야한다.
+   
+   * 배치
+   * 리스트 꾸미기
+   * 표 꾸미기
+   * 폼 꾸미기
+   * 애니메이션 등 동적 변화 만들기
+
+🟡 배치
+
+🟢 블록 박스와 인라인 박스
+
+* 블록 태그 사례 : <p>, <hl>, <div>, <ul>
+* 인라인 태그 사례 : <span>, <a>, <img>
+
+
+🟢 박스의 유형 제어, display
+
+ 🟠 display 프로퍼티
+ 
+  * 블록 박스 : display : block
+  * 인라인 박스 : display : inline            <-- 인라인 박스는 width, hegiht, padding, margin 등 크기 조절이 불가능하다.
+  
+  * 인라인 블록 박스 : display : inline-block    <-- 인라인 블록 박스는 인라인 속성과 블록 속성이 합쳐져 있다. 크기 조절이 가능하다.
+ 
+ 🟠 display:block
+ 
+   --> 블록 박스의 성질을 가지게 됨
+   
+ 🟠 display:inline 
+  
+   --> 인라인 박스의 성질을 가지게 됨
+ 
+ 🟠 display:inline-block
+  
+   --> 블록 박스와 인라인 박스의 성질을 가지게 됨
+   
+   
+  
+ 🟢 박스의 배치, position
+ 
+  --> 브라우저는 웹 페이지에 나타난 순서대로 HTML 태그를 배치한다. 이를 normal flow라고 부른다.
+      position 프로퍼티를 이용하면 normal flow를 무시하고 원하는 위치에 박스를 배치할 수 있다.
+      
+      🎈 normal flow 란?
+            --> 일반적인 상황에서 각의 요소들의 성질에 따라 배치 되는 순서(흐름)
+                예를 들면, block 레벨 요소들은 상하로 배치되고, inline 레벨 요소들은 좌우로 배치되는 것
+                
+                출처: https://velog.io/@imyourgenie/1.-HTMLCSS%EC%9D%98-%EA%B8%B0%EC%B4%88-7-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%832
+      
+      * 정적 배치 - position : static (디폴트)
+      * 상대 배치 - position : relative
+      * 절대 배치 - position : absolute
+      * 고정 배치 - position : fixed
+      * 유동 배치 - float : left 혹은 float : right
+   
+  🟠 정적 배치, position:static
+  
+   --> 디폴트 배치 방식이지만, 정적 배치에서는 left, top, bottom, right 프로퍼티의 값은 위치에 영향을 주지 않는다.
+   
+  🟠 상대 배치, position:relative
+  
+   --> normal flow에 따라 HTML 태그가 출력되는 위치를 '기본 위치'라고 한다.
+       position:relative 스타일이 주어지면, 태그는 '기본 위치'에서 left, top, bottom, right 프로퍼티의 값만큼 이동 한 '상대 위치'에 배치된다.
+       
+       top과 bottom이 동시에 지정되면 bottom이 무시되고, 
+       left와 right이 동시에 지정되면 right이 무시된다.
+       
+       
+div {
+    border: 1px solid darkblue;
+    width: 100px;
+    padding: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+#t1 {
+    position: relative;        <-- relative를 지정해주지 않으면 아래의 top,left, right은 아무런 영향이 없다.
+    top: 100px;
+    left: 100px;
+    right: 60px;         <-- right 값 무시
+}
+
+#t2 {
+    position: relative;
+    top: 160px;
+    left: 100px;
+    bottom: 300px;     <-- bottom 값 무시
+}
+
+
+  🟠 절대 배치, position:absolute
+
+----------------HTML--------------------
+
+  <div id="t2">
+        <p id="f1">그래</p>
+        <p id="f2">잘가</p>
+        <p id="f3">안녕</p>
+    </div>  
+    
+---------------CSS---------------------
+
+div {
+    border: 1px solid darkblue;
+    width: 100px;
+    padding: 100px;
+    display: inline-block;
+    text-align: center;
+}
+
+p {
+    border: 1px solid firebrick;
+}
+
+#f1 {
+    position:absolute;  
+    top: 10px;
+    right: 30px;
+}
+
+#f2 {
+    position:absolute;
+    bottom: 100px;
+    left: 100px;
+}
+
+#f3 {
+    position:absolute;
+    top: 100px;
+    right: 60px;
+}
+  
+  
+  🟠 고정 배치, position:fixed
+  
+   --> 고정 배치는 절대 배치와 달리 뷰트(viewport, 브라우저의 보이는 영역)에 고정시켜 브라우저에 항상 보이게 한다.
+  
+  
+🟢 float 프로퍼티를 이용한 유동 배치
+  
+  --> float 프로퍼티를 지정하면 태그를 오른편이나 왼편에 항상 배치시킬 수 있다.
+  
+  #hi {
+    float:right;
+    padding: 0.25em;
+    margin: 0;
+}
+  
+  
+🟢 수직으로 쌓기, z-index
+
+  --> z-index는 HTML 태그들을 z축을 따라 수직으로 쌓는 순서 (stacking order)를 지정하는 프로퍼티로 값이 클수록
+      위에 쌓인다.
+      
+      z-index의 지정이 없는 경우 HTML 문서에 나오는 순서로 z-index 값이 자동 결정된다.
+      index는 position 프로퍼티가 relative, absolute, fixed인 경우에만 작동된다.
+  
+p {
+    border: 1px solid firebrick;
+    position: absolute;
+}
+  
+ #hi {
+    padding: 0.25em;
+    margin: 0;
+    z-index: 1;
+    left:130px;
+    background-color: aqua;
+}
+
+#hi2 {
+    padding: 0.25em;
+    margin: 0;
+    width:30px;
+    height: 50px;
+    z-index: 2;
+    background-color: fuchsia;
+}
+
+#hi3 {
+    padding: 0.25em;
+    margin: 0;
+    width:30px;
+    height: 100px;
+    z-index: 3;
+    background-color: green;
+} 
+  
+  
+🟢 보일 것인가 숨길 것인가, visibility 
+
+  --> visibillity 프로퍼티를 이용하면, HTML 태그를 출력할 것인지 숨길 것인지를 지정할 수 있다.
+  
+span {
+    visibility: hidden;
+}
+
+span:hover {
+    visibility: visible;      <-- 🎈🎈 이렇게 하면 마우스를 올릴 경우 보일줄 알았는데 작동되지 않는다.
+}  
+  
+  
+🟢 콘텐츠를 자를 것인가 말 것인가, overflow
+
+  --> overflow는 HTML 콘텐츠가 width와 hegiht 프로퍼티에 주어진 태그의 크기를 넘어가는 경우 콘텐츠를 자를 것인지 말 것인지를 지정하는 프로퍼티로서,
+      블록 태그에만 적용된다.
+      🎈🎈 overflow 프로퍼티가 적용되려면 width와 hegiht 프로퍼티에 박스 크기가 설정되어 있어야 한다.
+      
+      overflow: visible | hidden | scroll | auto
+  
+  
+#hi {
+    width:30px;
+    height: 50px;
+    overflow: hidden;
+}
+  
+ ------------------------------------------------ 책 확인 --------------------------------------------------------- 
+  
+🟡 리스트 꾸미기     책 p.226 ~ 231 확인
+  
+🟢 리스트와 아이템의 배경
+
+🟢 마커의 위치, list-style-position
+
+🟢 마커 종류, list-style-type
+
+🟢 이미지 마커, list-style-image
+
+🟢 리스트 단축 프로퍼티, list-style
+
+🟢 응용 : 리스트 
+   
+   🔷 menubar 셀렉터 만들기
+   
+   🔷 메뉴를 한 줄에 출력
+   
+   🔷 메뉴 아이템을 인라인으로 지정
+   
+   🔷 링크 밑줄 삭제
+   
+   🔷 링크에 마우스가 올라갈 때 텍스트를 violet 색으로 변경
+
+
+🟡 표 꾸미기     책 p.232 ~ 237 확인
+  
+🟢 셀 크기 제어, width hegiht
+
+🟢 셀 여백 및 정렬
+
+🟢 배경색괴 테두리 효과
+
+🟢 줄무늬 만들기
+
+🟢 응용 : 마우스가 올라갈 때 행의 배경색이 변하는 표 만들기 (:hover 이용)
+
+
+
+🟡 폼 꾸미기     책 p.238 ~ 239 확인
+  
+🟢 input[type=text]로 폼 요소에 스타일 입히기
+
+🟢 input[type=text]로 폼 요소의 테두리 만들기
+
+🟢 폼 요소에 마우스 처리
+
+   🔷 마우스가 올라올 때, :hover
+   
+   🔷 입력할때, :focus
+   
+-----------------------------------------------------------------------------------------------------------------
+
+🟡 CSS3 스타일로 태그에 동적 변화 만들기
+
+  --> 자바스크립트를 사용하지 않고 CSS3만으로 HTML 태그의 모양에 동적인 변화를 만들 수 있다.
+      
+      * 애니메이션 (animation)
+      * 전환 (transition)
+      * 변환 (transform)
+
+🟢 애니메이션
+
+   🔷 시간별 애니메이션 장면 작성
+   
+      --> @keyframes을 이용하여 시간 별로 HTML 태그가 변화하는 장면들을 작성한다.
+      
+@keyframes name {   
+                  시간비율 { 스타일; }                 애니메이션이 이루어지는 시간은 전체 애니메이션 시간에 대한 비율로 표현하는데,
+                    ...                                %나 from, to로 표현한다. from은 0%, to는 100%와 같다.
+                  시간비율 { 스타일; }
+                }
+
+   🔷 애니메이션 스타일 시트 작성
+   
+     animation-name : 애니메이션 이름:    <-- @keyframes의 name 지정
+     animation-duration : 시간;           <-- 1회 애니메이션 시간
+     animation-iteration-count : 애니메이션 반복 횟수;    <-- 숫자로도 줄 수 있지만, infinite로 주면 무한 반복
+
+
+#hi {
+    animation-name: gd;
+    animation-duration: 5s;         <-- 이게 없으면 작동이 안되더라
+    animation-iteration-count: infinite;
+}
+
+@keyframes gd {
+    from {background-color: aqua;}
+    50% {background-color:green;}
+    to {background-color: red;}
+}
+
+
+🟢 전환
+
+  --> 전환(transition)이란 HTML 태그에 적용된 CSS3 프로퍼티 값이 변할 때, 값의 변화를 서서히 진행시켜
+      애니메이션 효과를 내는 것이며 1회만 이루어진다.
+
+   🔷 전환 프로퍼티와 전환 시간 지정
+     
+     --> transition : 전환프로퍼티 전환시간   
+   
+   🔷 전환 효과 시작
+
+#hi {
+    font-size: 200%;         <-- HTML 태그에 적용된 CSS3 프로퍼티 값이 변함.
+    transition: font-size 5s;  <-- 프로퍼티 값을 서서히 변화시킴.
+}  
+
+
+🟢 변환
+
+  --> CSS3의 변환 (transform) 기능을 이용하면, 텍스트나 이미지를 회전이나 확대 등 다양한 기하학적인 모양으로
+      출력할 수 있다.
+      
+   🔷 transform 프로퍼티
+   
+div {
+    transform : rotate(20deg);  <-- <div> 태그를 시계 방향으로 20도 회전시킨 모양으로 변환
+}
+   
+   🔷 다중 변환
+
+div {
+    transform : rotate(20deg) scale(3,1);  <-- <div> 태그를 시계 방향으로 20도 회전시킨 후 폭을 3배로 확대시킨 다중 변환
+}
+
+
+
+
+
+
