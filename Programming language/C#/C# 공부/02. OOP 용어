@@ -1,0 +1,83 @@
+1. 멤버(Member) 
+     
+   : 하나의 클래스를 구성하는 개별적인 구성 요소
+     클래스의 멤버에 변수(Variable)와 메소드(Method) 및 다른 클래스가 있다.
+     
+
+2. 인스턴스(Instance)
+  
+   : 클래스라는 달고나를 찍는 조형물이 있다면, 인스턴스는 그 클래스(조형물)로 찍어낸 달고나다.
+     객체라고 생각하면 된다.
+     
+3. 메소드(Method)
+
+   : 행위가 정의된 것으로 클래스의 일부이다. 함수와 같은 의미로 쓰인다.
+   
+4. 필드(Field)
+
+   : 필드는 클래스 또는 구조체에서 직접 선언되는 모든 형식의 변수입니다.
+     필드는 public, private, protected, internal, protected internal 또는 private protected로 표시될 수 있습니다.
+     
+           출처: https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/classes-and-structs/fields
+                                                           
+     필드 = 멤버 변수 라고한다. 사실상 전역변수 = 필드 = 멤버 변수라는 말이 있는데
+     C#에서 정확히 전역변수라는 것을 정의하지도 허락하지도 않는다고 한다.
+     결국 전역변수라는건 C언어에서 사용되었던 용어이지 C#에서는 전역변수가아니라
+     필드와 멤버 변수로 불린다는 것이다.
+     (C#에서의 전역변수의 범위는 class 내부를 말하는 것이기 때문에, 전역변수라는 말이 좀 안맞는거 같기는 하다.)
+     
+     The Global variables are accessible from any place inside a class or namespace. 
+     Although C# does not allow global variables directly,                                  <-- 이 부분
+     the functionality of global variables can be accomplished by creating a static class, 
+     which is useful in some scenarios. 
+     In C#, a public static variable is used to declare inside a public class and used as a global variable. 
+     Its global scope ensures that it retains its usefulness throughout the program’s lifespan. 
+     As a result, it can be utilized by any function declared within the program unless shadowed.
+   
+     
+     필드 > 멤버변수 이라는 건가?
+     
+5. 멤버변수(Member variable)
+
+   : 멤버변수는 선언 위치가 '클래스 영역'이다.
+     클래스 변수와 인스턴스 변수로 나뉘어 진다.
+     
+     *클래스 변수 : static 키워드 사용 (객체 생성 X)
+                       클래스 변수는 모든 인스턴스가 공통된 값을 공유한다.
+                      
+     *인스턴스 변수 : 인스턴스 변수는 인스턴스가 생성될 때 생성된다.
+                      인스턴스 별로 다른 값을 가질 수 있다.
+class MyClass
+{
+    int MyField1;  //class variable and a field
+    int MyProperty {get; set;}  //class variable and a property
+
+    void MyMethod()
+    {
+        int MyFiel2 = 1; //method variable and a field
+        MyField1 = MyField2;
+    }
+}                      
+6. 지역변수(Local variable)
+
+   : 메소드 또는 생성자 내부에서 선언
+   
+7. 멤버함수(Member function)
+  
+   : 클래스 내에서 선언된 함수
+   
+
+
+
+Q1. 왜 c#은 function 말고 method 라고 부를까??
+
+A1.  * method 뜻: 방법, 방식
+    
+    함수는 독립적으로 존재한다.
+    메소드는 클래스, 구조체, 열겨형에 포함되어 있는 함수이다. 다른말로 "클래스 함수"라고 부른다.
+
+Q2. 필드는 무엇을 말할까?
+
+Q3. 데이터 멤버는 무슨 뜻일까??
+
+Q4. 왜 객체를 인스터스라고 부를까??
